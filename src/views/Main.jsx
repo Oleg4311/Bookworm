@@ -2,9 +2,9 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-function Main({ books }) {
+function Main({ books, userName }) {
   return (
-    <Layout>
+    <Layout userName={userName}>
       <div className="container">
         {books.map((book) => (
           <div>

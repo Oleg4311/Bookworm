@@ -3,24 +3,35 @@ require('@babel/register');
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-const sessionConfig = require('../config/config');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+
 const allBooks = require('./routers/allBooks');
 const book = require('./routers/book');
+const registerRouter = require('./routers/registerRouter');
+const loginRouter = require('./routers/loginRouter');
 
 const { PORT } = process.env;
 const { sequelize } = require('../db/models');
 
 const app = express();
 
-
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public/')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({
+  store: new FileStore(),
+  secret: process.env.SECRET || 'privet bobri',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false },
+}));
 
 app.use('/', allBooks);
 app.use('/book', book);
-
+app.use('/signup', registerRouter);
+app.use('/signin', loginRouter);
 
 app.listen(PORT, async () => {
   try {

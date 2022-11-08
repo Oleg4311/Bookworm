@@ -6,7 +6,6 @@ module.exports = {
       nameBook: 'John Doe',
       author: 'John Doe',
       comments: 'John Doe',
-      userId: 1,
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});
