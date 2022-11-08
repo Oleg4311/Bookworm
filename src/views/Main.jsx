@@ -1,27 +1,36 @@
 const React = require('react');
 
 const Layout = require('./Layout');
-const TodoCard = require('./Card');
 
-function Main({ todos }) {
+function Main({ books }) {
   return (
     <Layout>
-      <form className="form" method="POST" action="/">
-        <div>
-          <label htmlFor="title">Название таски: </label>
-          <input id="title" name="title" type="text" />
-        </div>
-        <div>
-          <label htmlFor="text">Статус таски: </label>
-          <input id="text" name="text" type="text" />
-        </div>
-        {/* Если не указать тип кнопки, то он по умолчанию submit */}
-        <button type="submit" className="sendButton">Отправить</button>
-      </form>
-      <div className="todosContainer">
-        {todos && todos.map(({ id, title, text }) => <TodoCard key={id} id={id} title={title} text={text} />)}
+      <div className="container">
+        {books.map((book) => (
+          <div>
+            <img src={`${book.picture}`} alt="Load picture" />
+            <p>
+              Название книги:
+              {' '}
+              {book.nameBook}
+            </p>
+            <p>
+              Автор:
+              {' '}
+              {book.author}
+            </p>
+            <p>
+              Описание:
+              {' '}
+              {book.comments}
+            </p>
+            <a href={`/book/${book.id}`}>
+              <button type="submit">Показать книгу</button>
+            </a>
+          </div>
+        ))}
       </div>
-      <script defer src="js/todos.js" />
+      <script defer src="js/books.js" />
     </Layout>
   );
 }

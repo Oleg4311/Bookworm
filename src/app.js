@@ -4,11 +4,16 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const sessionConfig = require('../config/config');
+const allBooks = require('./routers/allBooks');
+const book = require('./routers/book');
 
 const { PORT } = process.env;
 const { sequelize } = require('../db/models');
 
 const app = express();
+
+app.use('/', allBooks);
+app.use('/book', book);
 
 app.listen(PORT, async () => {
   try {
