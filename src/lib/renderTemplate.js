@@ -6,7 +6,6 @@ const renderTemplate = (component, props = {}, response) => {
 
   const html = ReactDOMServer.renderToStaticMarkup(reactElement);
 
-
   response.write('<!DOCTYPE html>');
   response.end(html);
 };
