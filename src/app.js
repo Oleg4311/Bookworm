@@ -4,11 +4,22 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const sessionConfig = require('../config/config');
+const allBooks = require('./routers/allBooks');
+const book = require('./routers/book');
 
-const { PORT, SESSION_SECRET } = process.env;
+const { PORT } = process.env;
 const { sequelize } = require('../db/models');
 
 const app = express();
+
+
+app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, '../public/')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use('/', allBooks);
+app.use('/book', book);
 
 
 app.listen(PORT, async () => {
