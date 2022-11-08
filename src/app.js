@@ -5,11 +5,10 @@ const express = require('express');
 const morgan = require('morgan');
 const sessionConfig = require('../config/config');
 
-const { PORT, SESSION_SECRET } = process.env;
+const { PORT } = process.env;
 const { sequelize } = require('../db/models');
 
 const app = express();
-
 
 app.listen(PORT, async () => {
   try {
