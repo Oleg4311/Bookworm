@@ -44,7 +44,7 @@ module.exports = function Layout({ children, newUser }) {
                       <a className="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="/registration">Registration</a>
+                      <a className="nav-link" href="/signUp" />
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="/login">Login</a>

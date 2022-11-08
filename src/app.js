@@ -12,8 +12,15 @@ const { sequelize } = require('../db/models');
 
 const app = express();
 
+
+app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, '../public/')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use('/', allBooks);
 app.use('/book', book);
+
 
 app.listen(PORT, async () => {
   try {
