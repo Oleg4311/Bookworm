@@ -33,6 +33,9 @@ module.exports = function Layout({ children, newUser }) {
                       </a>
                     </li>
                     <li className="nav-item">
+                      <a className="nav-link" href="/createbook">Добавить книгу</a>
+                    </li>
+                    <li className="nav-item">
                       <a className="nav-link" href="#">Избранное</a>
                     </li>
                     <li className="nav-item">
