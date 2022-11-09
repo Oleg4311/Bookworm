@@ -11,6 +11,9 @@ module.exports = {
       raiting: {
         type: Sequelize.INTEGER,
       },
+      comments: {
+        type: Sequelize.INTEGER,
+      },
       bookId: {
         type: Sequelize.INTEGER,
         references: {

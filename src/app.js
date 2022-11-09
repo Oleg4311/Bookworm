@@ -9,11 +9,12 @@ const FileStore = require('session-file-store')(session);
 const allBooks = require('./routers/allBooks');
 const book = require('./routers/book');
 const CreateBook = require('./routers/CreateBook');
-
 const registerRouter = require('./routers/registerRouter');
 const loginRouter = require('./routers/loginRouter');
 const logoutRouter = require('./routers/logoutRouter');
-
+const Favorites = require('./routers/FavoritesRouter');
+const addBook = require('./routers/addBookRouter');
+const deleteBookFav = require('./routers/deleteBookRouter');
 
 const { PORT } = process.env;
 const { sequelize } = require('../db/models');
@@ -36,7 +37,9 @@ app.use(session({
 app.use('/', allBooks);
 app.use('/book', book);
 app.use('/createbook', CreateBook);
-
+app.use('/favorites', Favorites);
+app.use('/add', addBook);
+app.use('/delete', deleteBookFav);
 app.use('/signup', registerRouter);
 app.use('/signin', loginRouter);
 app.use('/logout', logoutRouter);

@@ -8,7 +8,11 @@ const CreateBook = require('../views/CreateBook');
 router.get('/', (req, res) => {
   try {
     const userName = req.session?.username;
-    renderTemplate(CreateBook, { userName }, res);
+    if (userName) {
+      renderTemplate(CreateBook, { userName }, res);
+    } else {
+      res.redirect('/');
+    }
   } catch (error) {
     console.log('Ошибка:', error);
   }

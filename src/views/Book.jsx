@@ -2,9 +2,9 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-function Book({ book }) {
+function Book({ book, userName }) {
   return (
-    <Layout>
+    <Layout userName={userName}>
       <div className="container">
         <div>
           <img src={`${book.picture}`} alt="Load picture" />

@@ -2,12 +2,14 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-function Main({ books }) {
+module.exports = function Favorites({ books, userName }) {
   return (
-    <Layout>
-      <div className="container">
+    <Layout userName={userName}>
+      <link rel="stylesheet" href="/styles/main.css" />
+      <link rel="stylesheet" href="/styles/btnLike.css" />
+      <div className="container" id="firstDiv">
         {books.map((book) => (
-          <div>
+          <div id={`${book.id}`} className="book">
             <img src={`${book.picture}`} alt="Load picture" />
             <p>
               Название книги:
@@ -27,12 +29,13 @@ function Main({ books }) {
             <a href={`/book/${book.id}`}>
               <button type="submit">Показать книгу</button>
             </a>
+            <form action="/delete" method="DELETE">
+              <button type="button" id="btn-like">LIKE</button>
+            </form>
           </div>
         ))}
       </div>
-      <script defer src="js/books.js" />
+      <script defer src="js/deleteFavBook.js" />
     </Layout>
   );
-}
-
-module.exports = Main;
+};
