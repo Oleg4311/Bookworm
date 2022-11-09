@@ -23,6 +23,12 @@ function Book({ book, userName }) {
             {' '}
             {book.comments}
           </p>
+
+          <div className="mb-3">
+            <label className="did-floating-label">Краткое описание книги</label>
+            <textarea type="comments" className="form-control" id="exampleInputUsername" name="comments" placeholder="" />
+          </div>
+
         </div>
       </div>
       <script defer src="js/books.js" />

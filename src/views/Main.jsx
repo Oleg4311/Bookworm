@@ -36,7 +36,6 @@ function Main({ books, userName }) {
             <a type="submit" href={`/book/${book.id}`}>
               <button type="submit">Показать книгу</button>
             </a>
-            
             <form className="add" action="/add" method="POST">
               <button type="button" id="btn-like">LIKE</button>
             </form>
