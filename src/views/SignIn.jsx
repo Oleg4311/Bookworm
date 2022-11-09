@@ -21,7 +21,7 @@ function SignIn() {
             <label htmlFor="form12" className="form-label">Пароль:</label>
             <input type="password" id="form12" name="password" className="form-control" />
           </div>
-          <button type="submit" className="btn btn-primary">Зарегистрироваться</button>
+          <button type="submit" className="btn btn-primary">Войти</button>
         </div>
       </form>
     </Layout>

@@ -23,7 +23,7 @@ function SignUp() {
             <label htmlFor="exampleInputPassword1" className="form-label">Пароль:</label>
             <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
           </div>
-          <button type="submit" className="btn btn-primary">Войти</button>
+          <button type="submit" className="btn btn-primary">Зарегистрироваться</button>
         </div>
       </form>
     </Layout>

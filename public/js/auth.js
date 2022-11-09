@@ -59,7 +59,7 @@ buttonMail.addEventListener('click', (event) => {
         newInput.classList.add('divMail');
         newInput.classList.add('mb-3');
         newInput.innerHTML = `<label htmlFor="exampleInputEmail1" class="form-label">Email адрес:</label>
-        <input type="email" name="email" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" />
+        <input type="phone" name="email" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" />
       </div>`;
         const divPhoneMail = document.querySelector('.phone-email');
         const divPhone = document.querySelector('.divPhone');
