@@ -1,6 +1,6 @@
-const mainDiv = document.querySelector('.container');
+const add = document.querySelector('.add');
 
-mainDiv.addEventListener('click', async (e) => {
+add.addEventListener('click', async (e) => {
   e.preventDefault();
 
   if (e.target.tagName === 'BUTTON' && e.target.innerHTML === 'LIKE') {

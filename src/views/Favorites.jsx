@@ -9,7 +9,7 @@ module.exports = function Favorites({ books, userName }) {
       <link rel="stylesheet" href="/styles/btnLike.css" />
       <div className="container" id="firstDiv">
         {books.map((book) => (
-          <div id="book">
+          <div id={`${book.id}`} className="book">
             <img src={`${book.picture}`} alt="Load picture" />
             <p>
               Название книги:
@@ -29,13 +29,13 @@ module.exports = function Favorites({ books, userName }) {
             <a href={`/book/${book.id}`}>
               <button type="submit">Показать книгу</button>
             </a>
-            <form action="/add" method="POST">
+            <form action="/delete" method="DELETE">
               <button type="button" id="btn-like">LIKE</button>
             </form>
           </div>
         ))}
       </div>
-      {/* <script defer src="js/books.js" /> */}
+      <script defer src="js/deleteFavBook.js" />
     </Layout>
   );
 };
