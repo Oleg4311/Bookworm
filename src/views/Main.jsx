@@ -5,9 +5,10 @@ const Layout = require('./Layout');
 function Main({ books, userName }) {
   return (
     <Layout userName={userName}>
-      <div className="container">
+      <link rel="stylesheet" href="/styles/main.css" />
+      <div className="container" id='firstDiv'>
         {books.map((book) => (
-          <div>
+          <div id='book'>
             <img src={`${book.picture}`} alt="Load picture" />
             <p>
               Название книги:

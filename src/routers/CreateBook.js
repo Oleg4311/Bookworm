@@ -7,26 +7,26 @@ const CreateBook = require('../views/CreateBook');
 
 router.get('/', (req, res) => {
   try {
-    renderTemplate(CreateBook, { }, res);
+    const userName = req.session?.username;
+    renderTemplate(CreateBook, { userName }, res);
   } catch (error) {
     console.log('Ошибка:', error);
   }
 });
 
 router.post('/', async (req, res) => {
-//   const newUser = req.session?.newUser;
   const {
     picture, nameBook, author, comments,
   } = req.body;
   try {
-    // const user = await User.findOne({ raw: true, where: { email: newUser } });
-    // const { id } = user;
-    // console.log(id);
-
-    await Book.create({
-      picture, nameBook, author, comments,
-    });
-    res.redirect('/');
+    if (picture !== '' && nameBook !== '' && author !== '' && comments !== '') {
+      await Book.create({
+        picture, nameBook, author, comments,
+      });
+      res.redirect('/');
+    } else {
+      console.log('Заполните все поля.');
+    }
   } catch (error) {
     res.send(`Error ----> ${error}`);
   }

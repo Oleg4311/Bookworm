@@ -1,0 +1,14 @@
+#firstDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#book {
+    margin: 30px;
+}
+
+img {
+    max-width: 320px;
+    max-height: 244px;
+}
