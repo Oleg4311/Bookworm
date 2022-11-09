@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     }
     res.redirect('/signin');
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 });
 
