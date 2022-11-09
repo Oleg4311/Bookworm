@@ -1,13 +1,13 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Favorites({ newUser, patrys }) {
+module.exports = function Favorites({ userName, books }) {
   return (
-    <Layout newUser={newUser}>
+    <Layout userName={userName}>
 
-      <div className="m-3 login-box">
+      <div className="m-3 container">
 
-        <h2>Add Party</h2>
+        <h2> Добавить книгу </h2>
 
         <form id="addUser" method="post" action="/createbook" className="mainForm">
 

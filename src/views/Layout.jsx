@@ -24,21 +24,16 @@ module.exports = function Layout({ children, userName }) {
                 <div className="collapse navbar-collapse" id="navbarNav">
                   <div className="nav-link" href="/profile">
                     Привет,
+                    {' '}
                     { userName }
-
+                    {' '}
                     !
                   </div>
                   <ul className="navbar-nav">
                     <li className="nav-item">
                       <a className="nav-link" href="/">Главная</a>
                     </li>
-                    <li className="nav-item">
 
-                      <a className="nav-link" href="/profile">
-                        {' '}
-                        { newUser }
-                      </a>
-                    </li>
                     <li className="nav-item">
                       <a className="nav-link" href="/createbook">Добавить книгу</a>
                     </li>
