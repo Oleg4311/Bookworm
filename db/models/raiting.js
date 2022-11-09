@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Raiting.init({
     raiting: DataTypes.INTEGER,
+    comments: DataTypes.TEXT,
     bookId: DataTypes.INTEGER,
   }, {
     sequelize,
