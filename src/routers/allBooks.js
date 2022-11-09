@@ -10,8 +10,9 @@ const Main = require('../views/Main');
 
 router.get('/', async (req, res) => {
   try {
+    const userName = req.session?.username;
     const books = await Book.findAll({ raw: true });
-    renderTemplate(Main, { books }, res);
+    renderTemplate(Main, { books, userName }, res);
   } catch (error) {
     console.log('Ошибка:', error);
   }

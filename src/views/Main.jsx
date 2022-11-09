@@ -2,9 +2,9 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-function Main({ books }) {
+function Main({ books, userName }) {
   return (
-    <Layout>
+    <Layout userName={userName}>
       <div className="container">
         {books.map((book) => (
           <div>
@@ -30,7 +30,7 @@ function Main({ books }) {
           </div>
         ))}
       </div>
-      <script defer src="js/books.js" />
+      {/* <script defer src="js/books.js" /> */}
     </Layout>
   );
 }
