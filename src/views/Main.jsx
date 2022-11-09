@@ -30,7 +30,7 @@ function Main({ books, userName }) {
           </div>
         ))}
       </div>
-      <script defer src="js/books.js" />
+      {/* <script defer src="js/books.js" /> */}
     </Layout>
   );
 }

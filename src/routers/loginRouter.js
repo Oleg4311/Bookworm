@@ -19,11 +19,11 @@ router.post('/', async (req, res) => {
   try {
     const { password, email } = req.body;
     const user = await User.findOne({ where: { email } });
-    const isUserAuth = await bcrypt.compare(password, user.password);
-    req.session.username = user.name;
     if (user) {
+      const isUserAuth = await bcrypt.compare(password, user.password);
       if (isUserAuth) {
-        res.sendStatus(200);
+        req.session.username = user.name;
+        res.json({ message: 'Успешный вход' });
       } else {
         res.json({ error: 'Неправильный пароль' });
       }
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
       res.json({ error: 'Нет такого email' });
     }
   } catch (error) {
-    console.log('Ошибка');
+    console.log('Ошибка', error);
   }
 });
 

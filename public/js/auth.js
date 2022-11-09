@@ -33,5 +33,13 @@ signInForm?.addEventListener('submit', async (event) => {
     body: JSON.stringify(allFormsData),
   });
   const result = await response.json();
-  console.log(result);
+  console.log('result', result);
+  if (result.message === 'Успешный вход') {
+    window.location.href = '/';
+  } else if (result.error === 'Неправильный пароль') {
+    alert('Неправильный пароль');
+  } else if (result.error === 'Нет такого email') {
+    console.log('first');
+    alert('Нет такого email');
+  }
 });
