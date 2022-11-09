@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Favorites({ userName, books }) {
+module.exports = function CreateBook({ userName, books }) {
   return (
     <Layout userName={userName}>
 

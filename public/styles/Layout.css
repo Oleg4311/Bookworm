@@ -1,0 +1,13 @@
+#Greetings {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#add {
+    width: 136px;
+}
+
+.container-fluid {
+    text-align: center;
+}

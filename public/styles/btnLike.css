@@ -1,0 +1,43 @@
+#btn-like{
+    margin-left: 5px;
+    width: 80px;
+    height: 30px;
+    background-color: #F64C72;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    bottom: 0;
+    left: 0; 
+	transition: all 500ms ease; 
+}
+
+#btn-like:before {
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 30px;
+	background: rgba(255,255,255,0.3);
+	border-radius: 5px;
+	transition: all 2s ease;
+}
+
+#btn-like:hover:before {
+	width: 100%;
+}
+
+#btnPos{
+    min-height: 80px;}
+
+a{
+    font-family: "Source Serif Pro", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 100;
+}
+
+a:hover{
+    color: black;
+}
+
