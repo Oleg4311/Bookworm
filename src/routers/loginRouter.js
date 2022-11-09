@@ -17,8 +17,15 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { password, email } = req.body;
-    const user = await User.findOne({ where: { email } });
+    const { password, email, phone } = req.body;
+    console.log(email, 'email', phone, 'phone');
+    let user = null;
+    if (req.body.email) {
+      user = await User.findOne({ where: { email } });
+    }
+    if (req.body.phone) {
+      user = await User.findOne({ where: { phone } });
+    }
     if (user) {
       const isUserAuth = await bcrypt.compare(password, user.password);
       if (isUserAuth) {
