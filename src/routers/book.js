@@ -11,6 +11,7 @@ const BookComponent = require('../views/Book');
 router.get('/:id', async (req, res) => {
   const userName = req.session?.username;
   const { id } = req.params;
+
   try {
     const comment = await Comment.findAll({ where: { bookId: id }, raw: true });
     const comments = [];
