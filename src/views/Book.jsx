@@ -25,11 +25,11 @@ function Book({ book, userName, comments }) {
           </p>
 
           <form action={`/book/${book.id}`} method="POST">
-          <div className="mb-3">
-            <label className="did-floating-label"> Текст комментария </label>
-            <textarea type="comments" className="form-control" id="exampleInputUsername" name="comments" placeholder="" />
-          </div>
-            <button type="submit" className="btn btn-primary" id="submit">Добавить комментарий</button>
+            <div className="mb-3">
+              <label className="did-floating-label"> Текст комментария </label>
+              <textarea type="comments" className="form-control" id="exampleInputUsername" name="comments" placeholder="" />
+            </div>
+            <button type="submit" className="btn btn-primary" id={`${book.id}`}>Добавить комментарий</button>
           </form>
           <div>
             {comments.map((comment) => (
