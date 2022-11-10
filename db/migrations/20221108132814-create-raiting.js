@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       comments: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.TEXT,
       },
       bookId: {
         type: Sequelize.INTEGER,

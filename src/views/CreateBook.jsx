@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function CreateBook({ userName, books }) {
+module.exports = function CreateBook({ userName, books, wrong }) {
   return (
     <Layout userName={userName}>
 
@@ -33,6 +33,7 @@ module.exports = function CreateBook({ userName, books }) {
 
           <div className="button-form" />
           <button type="submit" className="btn btn-primary" id="submit">Добавить книгу.</button>
+          <p className="errorMesseg">{wrong}</p>
         </form>
       </div>
 

@@ -4,6 +4,7 @@ const router = express.Router();
 const { Book } = require('../../db/models');
 const renderTemplate = require('../lib/renderTemplate');
 const CreateBook = require('../views/CreateBook');
+const Wrong = require('../views/Wrong');
 
 router.get('/', (req, res) => {
   try {
@@ -11,7 +12,8 @@ router.get('/', (req, res) => {
     if (userName) {
       renderTemplate(CreateBook, { userName }, res);
     } else {
-      res.redirect('/');
+      const wrong = { title: 'Заполните все поля !' };
+      renderTemplate(CreateBook, wrong, res);
     }
   } catch (error) {
     console.log('Ошибка:', error);

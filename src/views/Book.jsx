@@ -2,7 +2,7 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-function Book({ book, userName }) {
+function Book({ book, userName, comments }) {
   return (
     <Layout userName={userName}>
       <div className="container">
@@ -24,14 +24,22 @@ function Book({ book, userName }) {
             {book.comments}
           </p>
 
+          <form action={`/book/${book.id}`} method="POST">
           <div className="mb-3">
-            <label className="did-floating-label">Краткое описание книги</label>
+            <label className="did-floating-label"> Текст комментария </label>
             <textarea type="comments" className="form-control" id="exampleInputUsername" name="comments" placeholder="" />
+          </div>
+            <button type="submit" className="btn btn-primary" id="submit">Добавить комментарий</button>
+          </form>
+          <div>
+            {comments.map((comment) => (
+              <p>{`${comment}`}</p>
+            ))}
           </div>
 
         </div>
       </div>
-      <script defer src="js/books.js" />
+      {/* <script defer src="js/books.js" /> */}
     </Layout>
   );
 }
