@@ -33,11 +33,10 @@ function Main({ books, userName }) {
               </span>
             </p>
             <a type="submit" href={`/book/${book.id}`}>
-              <button type="submit">Показать книгу</button>
+              <button type="submit" className="viewBook" id={`${book.id}`}>Показать книгу</button>
             </a>
 
-              <button type="button" className="addBtn" id={`${book.id}`}>LIKE</button>
-
+            <button type="button" className="addBtn" id={`${book.id}`}>LIKE</button>
 
           </div>
         ))}

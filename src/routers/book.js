@@ -9,19 +9,17 @@ const renderTemplate = require('../lib/renderTemplate');
 const BookComponent = require('../views/Book');
 
 router.get('/:id', async (req, res) => {
+  console.log('dasdasd')
   const userName = req.session?.username;
   const { id } = req.params;
   //console.log(id);
   try {
-    console.log('============== 2');
     const raiting = await Raiting.findAll({ where: { bookId: id }, raw: true });
     const comments = [];
     for (let i = 0; i < raiting.length; i++) {
       const a = raiting[i].comments;
       comments.push(a);
     }
-    console.log(comments);
-    //console.log(newComments);
     const book = await Book.findOne({ where: { id } });
     renderTemplate(BookComponent, { book, userName, comments }, res);
   } catch (error) {
