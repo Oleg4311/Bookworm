@@ -16,6 +16,7 @@ module.exports = function Layout({ children, userName }) {
         <link rel="stylesheet" href="/styles/Layout.css" />
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossOrigin="anonymous" />
         <script defer src="/js/auth.js" />
+        <script defer src="/js/rating.js" />
         <link rel="stylesheet" href="/styles/raiting.css" />
         <title>Books</title>
       </head>

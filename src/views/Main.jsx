@@ -33,18 +33,17 @@ function Main({ books, userName }) {
                 {book.comments}
               </span>
             </p>
-            <a type="submit" href={`/book/${book.id}`}>
-              <button type="submit">Показать книгу</button>
-            </a>
-            <form className="add" action="/add" method="POST">
-              <button type="button" id="btn-like">LIKE</button>
+            <form>
+              <button id={book.id} type="submit">Показать книгу</button>
             </form>
-
+            <form className="add" action="/add" method="POST">
+              <button type="button" id={book.id}>LIKE</button>
+            </form>
             <div className="container d-flex justify-content-center">
               <div className="row">
                 <div className="col-md-12">
                   <div className="stars">
-                    <form action="">
+                    <form action="" className="rating">
                       <input className="star star-5" id="star-5" type="radio" name="star" />
                       <label className="star star-5" htmlFor="star-5" />
                       <input className="star star-4" id="star-4" type="radio" name="star" />

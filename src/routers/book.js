@@ -10,9 +10,8 @@ const BookComponent = require('../views/Book');
 
 router.get('/:id', async (req, res) => {
   const userName = req.session?.username;
-  console.log('=====================================================================')
   const { id } = req.params;
-  console.log(id);
+  console.log('5555555',id);
   try {
     const book = await Book.findOne({ where: { id } });
     renderTemplate(BookComponent, { book, userName }, res);
