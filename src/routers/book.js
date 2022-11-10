@@ -2,22 +2,20 @@ const express = require('express');
 
 const router = express.Router();
 
-const { Book, Raiting } = require('../../db/models');
+const { Book, Raiting, Comment } = require('../../db/models');
 
 const renderTemplate = require('../lib/renderTemplate');
 
 const BookComponent = require('../views/Book');
 
 router.get('/:id', async (req, res) => {
-  console.log('dasdasd')
   const userName = req.session?.username;
   const { id } = req.params;
-  //console.log(id);
   try {
-    const raiting = await Raiting.findAll({ where: { bookId: id }, raw: true });
+    const comment = await Comment.findAll({ where: { bookId: id }, raw: true });
     const comments = [];
-    for (let i = 0; i < raiting.length; i++) {
-      const a = raiting[i].comments;
+    for (let i = 0; i < comment.length; i++) {
+      const a = comment[i].comments;
       comments.push(a);
     }
     const book = await Book.findOne({ where: { id } });
@@ -35,12 +33,10 @@ router.post('/:id', async (req, res) => {
   console.log(req.body);
   try {
     if (comments !== '') {
-      // await Raiting.create({
-      //   raiting: 15, comments: kek, bookId: id,
-      // });
-      // res.redirect('/');
-    } else {
-      console.log('Заполните все поля.');
+      await Comment.create({
+        comments, bookId: id,
+      });
+      res.redirect(`/book/${id}`);
     }
   } catch (error) {
     res.send(`Error ----> ${error}`);
