@@ -7,7 +7,6 @@ function Main({ books, userName }) {
     <Layout userName={userName}>
       <link rel="stylesheet" href="/styles/btnLike.css" />
       <link rel="stylesheet" href="/styles/main.css" />
-
       <div className="container" id="firstDiv">
         {books.map((book) => (
           <div className="book" id={`${book.id}`}>
@@ -33,12 +32,13 @@ function Main({ books, userName }) {
                 {book.comments}
               </span>
             </p>
-            <form>
-              <button id={book.id} type="submit">Показать книгу</button>
-            </form>
-            <form className="add" action="/add" method="POST">
-              <button type="button" id={book.id}>LIKE</button>
-            </form>
+
+            <a type="submit" href={`/book/${book.id}`}>
+              <button type="submit" className="viewBook" id={`${book.id}`}>Показать книгу</button>
+            </a>
+
+            <button type="button" className="addBtn" id={`${book.id}`}>LIKE</button>
+            
             <div className="container d-flex justify-content-center">
               <div className="row">
                 <div className="col-md-12">
