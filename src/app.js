@@ -15,6 +15,7 @@ const logoutRouter = require('./routers/logoutRouter');
 const Favorites = require('./routers/FavoritesRouter');
 const addBook = require('./routers/addBookRouter');
 const deleteBookFav = require('./routers/deleteBookRouter');
+const raitingRouter = require('./routers/raitingRouter');
 
 const { PORT } = process.env;
 const { sequelize } = require('../db/models');
@@ -43,7 +44,7 @@ app.use('/delete', deleteBookFav);
 app.use('/signup', registerRouter);
 app.use('/signin', loginRouter);
 app.use('/logout', logoutRouter);
-
+app.use('/raiting', raitingRouter);
 
 app.listen(PORT, async () => {
   try {

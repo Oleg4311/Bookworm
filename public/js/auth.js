@@ -47,7 +47,7 @@ signInForm?.addEventListener('submit', async (event) => {
 });
 
 const buttonMail = document.querySelector('.mail');
-buttonMail.addEventListener('click', (event) => {
+buttonMail?.addEventListener('click', (event) => {
   try {
     event.preventDefault();
     if (event.target.tagName === 'BUTTON') {
@@ -73,7 +73,7 @@ buttonMail.addEventListener('click', (event) => {
 });
 
 const buttonPhone = document.querySelector('.phone');
-buttonPhone.addEventListener('click', (event) => {
+buttonPhone?.addEventListener('click', (event) => {
   try {
     event.preventDefault();
     if (event.target.tagName === 'BUTTON') {

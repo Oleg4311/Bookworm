@@ -7,7 +7,7 @@ const Favorites = require('../views/Favorites');
 
 router.get('/', async (req, res) => {
   try {
-    const userName = req.session?.username;
+    const userName = req.session.username;
     const currentUserId = await User.findOne({ where: { name: userName }, raw: true });
     const userId = currentUserId.id;
     const userBooksConnect = await Connect.findAll({ where: { userId } });

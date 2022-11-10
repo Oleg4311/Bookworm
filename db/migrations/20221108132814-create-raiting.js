@@ -11,13 +11,17 @@ module.exports = {
       raiting: {
         type: Sequelize.INTEGER,
       },
-      comments: {
-        type: Sequelize.TEXT,
-      },
       bookId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Books',
+          key: 'id',
+        },
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
           key: 'id',
         },
       },
