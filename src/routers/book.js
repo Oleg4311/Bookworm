@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { Book, Raiting, Comment } = require('../../db/models');
+const { Book, Raiting, Comment, User } = require('../../db/models');
 
 const renderTemplate = require('../lib/renderTemplate');
 
@@ -13,6 +13,8 @@ router.get('/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
+    const currentUser = await User.findOne({ where: { name: userName }, raw: true });
+    // const name = currentUser.name;
     const comment = await Comment.findAll({ where: { bookId: id }, raw: true });
     const comments = [];
     for (let i = 0; i < comment.length; i++) {
@@ -20,7 +22,7 @@ router.get('/:id', async (req, res) => {
       comments.push(a);
     }
     const book = await Book.findOne({ where: { id } });
-    renderTemplate(BookComponent, { book, userName, comments }, res);
+    renderTemplate(BookComponent, { book, userName, comments, currentUser }, res);
   } catch (error) {
     console.log('Ошибка:', error);
   }

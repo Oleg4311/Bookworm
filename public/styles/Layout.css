@@ -1,3 +1,7 @@
+#header {
+    font-size: 13.5px;
+}
+
 #Greetings {
     display: flex;
     justify-content: flex-end;

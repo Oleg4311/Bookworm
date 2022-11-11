@@ -10,10 +10,8 @@ router.get('/', (req, res) => {
   try {
     const userName = req.session?.username;
     if (userName) {
-      renderTemplate(CreateBook, { userName }, res);
-    } else {
-      const wrong = { title: 'Заполните все поля !' };
-      renderTemplate(CreateBook, wrong, res);
+      const wrong = 'Пожалуйста заполните все поля, при незаполнение всех полей и отправки формы вас вернёт на главную страницу !';
+      renderTemplate(CreateBook, { userName, wrong }, res);
     }
   } catch (error) {
     console.log('Ошибка:', error);
@@ -31,7 +29,10 @@ router.post('/', async (req, res) => {
       });
       res.redirect('/');
     } else {
-      console.log('Заполните все поля.');
+      res.redirect('/');
+      // const wrong = { title: 'Заполните все поля !' };
+      // console.log(wrong);
+      // renderTemplate(Wrong, wrong, res);
     }
   } catch (error) {
     res.send(`Error ----> ${error}`);

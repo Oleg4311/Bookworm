@@ -13,13 +13,14 @@ module.exports = function Layout({ children, userName }) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
         <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-       
-        <link rel="stylesheet" href="/styles/raiting.css" />
         <link rel="stylesheet" href="/styles/Layout.css" />
+        <link rel="stylesheet" href="/styles/book.css" />
+        <link rel="stylesheet" href="/styles/createBook.css" />
+
         <title>Books</title>
       </head>
-      <body>
-        <header>
+      <body id="body">
+        <header id="header">
           <nav className="navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
               <a className="navbar-brand">Books</a>
