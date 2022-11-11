@@ -32,7 +32,6 @@ html {
     justify-items: center;
     justify-content: space-between;
     margin: 15px;
-    margin-top: 90px;
     padding: 15px;
     text-align: center;
     align-items: stretch;
@@ -50,7 +49,7 @@ html {
     min-width: 400px;
     min-height: 360px;
     margin: 25px;
-    margin-bottom: 180px;
+    margin-bottom: 80px;
 }
 
 img {
