@@ -4,6 +4,7 @@ const Layout = require('./Layout');
 module.exports = function CreateBook({ userName, books }) {
   return (
     <Layout userName={userName}>
+      <link rel="stylesheet" href="/styles/createBook.css" />
 
       <div className="container2">
 
@@ -32,7 +33,7 @@ module.exports = function CreateBook({ userName, books }) {
           </div>
 
           <div className="button-form" />
-          <button type="submit" className="btn btn-primary" id="submit">Добавить книгу.</button>
+          <button type="submit" className="btn floating-button" id="submit">Добавить книгу</button>
         </form>
       </div>
 

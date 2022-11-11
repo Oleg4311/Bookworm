@@ -1,5 +1,5 @@
 #header {
-    font-size: 13.5px;
+    font-size: 14px;
 }
 
 #Greetings {
@@ -14,4 +14,19 @@
 
 .container-fluid {
     text-align: center;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(https://kartinkin.net/uploads/posts/2022-02/1645920241_50-kartinkin-net-p-kartinki-otkritaya-kniga-55.jpg);
+    /* color: rgba(220, 243, 12, 0.87); */
+    font-weight: 1000;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

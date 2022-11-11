@@ -29,7 +29,7 @@ function Book({ book, userName, comments, currentUser }) {
               <label className="did-floating-label"> Текст комментария </label>
               <textarea type="comments" required className="form-control" id="exampleInputUsername" name="comments" placeholder="" />
             </div>
-            <button type="submit" className="btn-primary" id={`${book.id}`}>Добавить комментарий</button>
+            <button type="submit" className="floating-button" id={`${book.id}`}>Добавить</button>
           </form>
           <div>
             {comments.map((comment) => (

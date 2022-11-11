@@ -16,7 +16,10 @@ module.exports = function Layout({ children, userName }) {
         <link rel="stylesheet" href="/styles/Layout.css" />
         <link rel="stylesheet" href="/styles/book.css" />
         <link rel="stylesheet" href="/styles/raiting.css" />
-        <link rel="stylesheet" href="/styles/createBook.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet" />
 
         <title>Books</title>
       </head>
