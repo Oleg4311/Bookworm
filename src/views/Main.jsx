@@ -18,9 +18,7 @@ function Main({ books, userName, raitings }) {
             } else {
               numberAverage = (num / raitingBook.length).toFixed(2);
             }
-            // if (numberAverage === NaN || numberAverage == undefined) {
-            //   numberAverage = 0;
-            // }
+
             const raitingValue = Math.round(num / raitingBook.length);
             return (
               <div className="book" id={`${book.id}`}>
