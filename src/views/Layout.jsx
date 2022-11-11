@@ -15,6 +15,7 @@ module.exports = function Layout({ children, userName }) {
         <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="/styles/Layout.css" />
         <link rel="stylesheet" href="/styles/book.css" />
+        <link rel="stylesheet" href="/styles/raiting.css" />
         <link rel="stylesheet" href="/styles/createBook.css" />
 
         <title>Books</title>

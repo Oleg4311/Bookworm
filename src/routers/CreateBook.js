@@ -4,7 +4,6 @@ const router = express.Router();
 const { Book } = require('../../db/models');
 const renderTemplate = require('../lib/renderTemplate');
 const CreateBook = require('../views/CreateBook');
-const Wrong = require('../views/Wrong');
 
 router.get('/', (req, res) => {
   try {

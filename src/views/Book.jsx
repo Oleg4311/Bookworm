@@ -27,7 +27,7 @@ function Book({ book, userName, comments, currentUser }) {
           <form action={`/book/${book.id}`} method="POST">
             <div className="mb-3">
               <label className="did-floating-label"> Текст комментария </label>
-              <textarea type="comments" className="form-control" id="exampleInputUsername" name="comments" placeholder="" />
+              <textarea type="comments" required className="form-control" id="exampleInputUsername" name="comments" placeholder="" />
             </div>
             <button type="submit" className="btn-primary" id={`${book.id}`}>Добавить комментарий</button>
           </form>

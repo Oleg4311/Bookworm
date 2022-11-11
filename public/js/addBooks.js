@@ -1,7 +1,7 @@
 const add = document.querySelector('.container1');
 
 add.addEventListener('click', async (e) => {
-  if (e.target.innerHTML === 'LIKE') {
+  if (e.target.innerHTML === 'В избранное') {
     const closestParent = e.target.closest('.addBtn');
     const { id } = closestParent;
 

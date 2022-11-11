@@ -6,7 +6,6 @@ module.exports = function Favorites({ books, userName }) {
   return (
     <Layout userName={userName}>
       <link rel="stylesheet" href="/styles/Favorites.css" />
-      {/* <link rel="stylesheet" href="/styles/btnLike.css" /> */}
       <div className="container" id="firstDiv">
         {books.map((book) => (
           <div id={`${book.id}`} className="book">
@@ -22,9 +21,9 @@ module.exports = function Favorites({ books, userName }) {
               {book.author}
             </p>
             <p>
-              Описание:
+              Описание книги:
               {' '}
-              {book.comments}
+              {book.comments.slice(0, 40)}...
             </p>
             <a id="href" href={`/book/${book.id}`}>
               <button className="floating-button" id="href" type="submit">Показать книгу</button>

@@ -62,7 +62,7 @@ buttonMail?.addEventListener('click', (event) => {
         newInput.classList.add('divMail');
         newInput.classList.add('mb-3');
         newInput.innerHTML = `<label class="form-label divMail" htmlFor="form3Example3cg">Email адрес:</label>
-        <input type="email" name="email" id="form3Example3cg" class="form-control form-control-lg" />
+        <input type="email" required name="email" id="form3Example3cg" class="form-control form-control-lg" />
       `;
         const divPhoneMail = document.querySelector('.phone-email');
         const divPhone = document.querySelector('.divPhone');
@@ -86,7 +86,7 @@ buttonPhone?.addEventListener('click', (event) => {
         newInput.classList.add('divPhone');
         newInput.classList.add('mb-3');
         newInput.innerHTML = `<label class="form-label" htmlFor="form3Example3cg">Телефон:</label>
-        <input type="text" name="phone" id="form3Example3cg" class="form-control form-control-lg" />`;
+        <input type="text" required name="phone" id="form3Example3cg" class="form-control form-control-lg" />`;
         const divPhoneMail = document.querySelector('.phone-email');
         const divMail = document.querySelector('.divMail');
         divPhoneMail.appendChild(newInput);

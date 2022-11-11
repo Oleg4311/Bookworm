@@ -41,17 +41,13 @@ function SignIn() {
                       <div className="phone-email">
                         <div className="form-outline mb-4 divMail">
                           <label className="form-label" htmlFor="form3Example3cg">Email адрес:</label>
-                          <input type="email" name="email" id="form3Example3cg" className="form-control form-control-lg" />
+                          <input type="email" required name="email" id="form3Example3cg" className="form-control form-control-lg" />
                         </div>
                       </div>
-                      {/* <div className="form-outline mb-4">
-                        <label className="form-label" htmlFor="form3Example3cg">Телефон:</label>
-                        <input type="text" name="phone" id="form3Example3cg" className="form-control form-control-lg" />
-                      </div> */}
 
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form3Example4cdg">Пароль:</label>
-                        <input type="password" name="password" id="form3Example4cdg" className="form-control form-control-lg" />
+                        <input type="password" required name="password" id="form3Example4cdg" className="form-control form-control-lg" />
                       </div>
 
                       <div className="d-flex justify-content-center">

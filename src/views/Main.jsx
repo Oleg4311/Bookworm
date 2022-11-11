@@ -38,10 +38,10 @@ function Main({ books, userName, raitings }) {
                   </span>
                 </p>
                 <p>
-                  Описание:
+                  Описание книги:
                   {' '}
                   <span>
-                    {book.comments}
+                    {book.comments.slice(0, 40)}...
                   </span>
                 </p>
 
@@ -49,7 +49,7 @@ function Main({ books, userName, raitings }) {
                   <button type="submit" className="viewBook floating-button" id={`${book.id}`}>Показать книгу</button>
                 </a>
 
-                <button type="button" className="addBtn floating-button" id={`${book.id}`}>LIKE</button>
+                <button type="button" className="addBtn floating-button" id={`${book.id}`}>В избранное</button>
                 <div className="container1 d-flex justify-content-center">
                   <div className="row">
                     <div className="col-md-12">
