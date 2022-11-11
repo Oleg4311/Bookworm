@@ -22,11 +22,14 @@ signUpForm?.addEventListener('submit', async (event) => {
 });
 
 const { signInForm } = document.forms;
+console.log(signInForm);
 signInForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const allFormsData = Object.fromEntries(new FormData(signInForm));
   console.log(allFormsData);
-  const { name, password } = allFormsData;
+  const {
+    name, password, phone, email,
+  } = allFormsData;
   const response = await fetch('/signin', {
     method: 'POST',
     headers: {
@@ -58,9 +61,9 @@ buttonMail?.addEventListener('click', (event) => {
         const newInput = document.createElement('div');
         newInput.classList.add('divMail');
         newInput.classList.add('mb-3');
-        newInput.innerHTML = `<label htmlFor="exampleInputEmail1" class="form-label">Email адрес:</label>
-        <input type="phone" name="email" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" />
-      </div>`;
+        newInput.innerHTML = `<label class="form-label divMail" htmlFor="form3Example3cg">Email адрес:</label>
+        <input type="email" name="email" id="form3Example3cg" class="form-control form-control-lg" />
+      `;
         const divPhoneMail = document.querySelector('.phone-email');
         const divPhone = document.querySelector('.divPhone');
         divPhoneMail.appendChild(newInput);
@@ -82,9 +85,8 @@ buttonPhone?.addEventListener('click', (event) => {
         const newInput = document.createElement('div');
         newInput.classList.add('divPhone');
         newInput.classList.add('mb-3');
-        newInput.innerHTML = `<label htmlFor="exampleInputEmail1" class="form-label">Телефон:</label>
-        <input type="phone" name="phone" placeholder="Введите номер с 8" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" />
-      </div>`;
+        newInput.innerHTML = `<label class="form-label" htmlFor="form3Example3cg">Телефон:</label>
+        <input type="text" name="phone" id="form3Example3cg" class="form-control form-control-lg" />`;
         const divPhoneMail = document.querySelector('.phone-email');
         const divMail = document.querySelector('.divMail');
         divPhoneMail.appendChild(newInput);

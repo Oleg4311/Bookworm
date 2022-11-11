@@ -11,14 +11,13 @@ router.get('/', async (req, res) => {
   try {
     renderTemplate(SignIn, {}, res);
   } catch (error) {
-    console.log('Ошибка');
+    console.log('Ошибка', error);
   }
 });
 
 router.post('/', async (req, res) => {
   try {
     const { password, email, phone } = req.body;
-    console.log(email, 'email', phone, 'phone');
     let user = null;
     if (req.body.email) {
       user = await User.findOne({ where: { email } });

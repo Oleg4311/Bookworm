@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
   try {
     renderTemplate(SignUp, {}, res);
   } catch (error) {
-    console.log('Ошибка');
+    console.log('Ошибка', error);
   }
 });
 
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
       res.sendStatus(400);
     }
   } catch (error) {
-    console.log('Ошибка');
+    console.log('Ошибка', error);
   }
 });
 
