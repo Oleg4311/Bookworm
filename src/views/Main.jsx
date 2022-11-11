@@ -12,7 +12,9 @@ function Main({ books, userName, raitings }) {
           {books.map((book) => {
             const raitingBook = raitings.filter((el) => el.bookId === book.id);
             const num = raitingBook.reduce((acc, curr) => acc + curr.raiting, 0);
+            console.log(num);
             const numberAverage = num / raitingBook.length;
+            console.log('1111', numberAverage);
             const raitingValue = Math.round(num / raitingBook.length);
             return (
               <div className="book" id={`${book.id}`}>

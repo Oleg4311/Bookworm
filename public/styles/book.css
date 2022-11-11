@@ -1,0 +1,29 @@
+*{
+}
+
+img {
+    display: flex;
+    margin: auto;
+    max-width: 400px;
+    max-height: 320px;
+    min-width: 400px;
+    min-height: 320px;
+}
+
+p {
+    margin: auto;
+    text-align: center;
+}
+
+.text{
+    text-align: center;
+}
+
+.mb-3 .btn-primary{
+    display: flex;
+    margin: auto;
+}
+
+.comments{
+    padding: 6px;
+}

@@ -9,7 +9,7 @@ function SignUp() {
         <div className="container">
           <div className="mb-3">
             <label htmlFor="exampleInputText" className="form-label">Введите ваше имя:</label>
-            <input type="text" name="name" className="form-control" id="exampleInputText" />
+            <input type="text" name="name" className="form-control" id="exampleInputText" required />
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Email адрес:</label>

@@ -5,7 +5,7 @@ module.exports = function CreateBook({ userName, books, wrong }) {
   return (
     <Layout userName={userName}>
 
-      <div className="m-3 container">
+      <div className="container2">
 
         <h2> Добавить книгу </h2>
 
@@ -13,7 +13,7 @@ module.exports = function CreateBook({ userName, books, wrong }) {
 
           <div className="mb-3">
             <label className="did-floating-label">Ссылка в формате URL для загрузки обложки</label>
-            <input type="url" className="form-control" id="exampleInputUsername" name="picture" placeholder="" />
+            <input type="url" className="form-control" id="exampleInputUsername" name="picture" placeholder="" required />
           </div>
 
           <div className="mb-3">

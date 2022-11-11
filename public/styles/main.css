@@ -5,10 +5,13 @@
 }
 
 #book {
+
     margin: 30px;
 }
 
 img {
     max-width: 320px;
     max-height: 244px;
+    min-width: 320px;
+    min-height: 244px;
 }
