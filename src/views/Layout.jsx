@@ -16,10 +16,7 @@ module.exports = function Layout({ children, userName }) {
         <link rel="stylesheet" href="/styles/Layout.css" />
         <link rel="stylesheet" href="/styles/book.css" />
         <link rel="stylesheet" href="/styles/createBook.css" />
-        <script defer src="/js/auth.js" />
-        <script defer src="/js/rating.js" />
-        <link rel="stylesheet" href="/styles/Layout.css" />
-        <link rel="stylesheet" href="/styles/raiting.css" />
+
         <title>Books</title>
       </head>
       <body id="body">
