@@ -5,13 +5,13 @@ const Layout = require('./Layout');
 module.exports = function Favorites({ books, userName }) {
   return (
     <Layout userName={userName}>
-      <link rel="stylesheet" href="/styles/main.css" />
-      <link rel="stylesheet" href="/styles/btnLike.css" />
+      <link rel="stylesheet" href="/styles/Favorites.css" />
+      {/* <link rel="stylesheet" href="/styles/btnLike.css" /> */}
       <div className="container" id="firstDiv">
         {books.map((book) => (
           <div id={`${book.id}`} className="book">
             <img src={`${book.picture}`} alt="Load picture" />
-            <p>
+            <p id="nameBook">
               Название книги:
               {' '}
               {book.nameBook}
@@ -26,11 +26,11 @@ module.exports = function Favorites({ books, userName }) {
               {' '}
               {book.comments}
             </p>
-            <a href={`/book/${book.id}`}>
-              <button type="submit">Показать книгу</button>
+            <a id="href" href={`/book/${book.id}`}>
+              <button className="floating-button" id="href" type="submit">Показать книгу</button>
             </a>
             <form action="/delete" method="DELETE">
-              <button type="button" id="btn-like">LIKE</button>
+              <button className="floating-button" type="button" id="btn-like">Удалить</button>
             </form>
           </div>
         ))}

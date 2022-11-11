@@ -16,6 +16,7 @@ const Favorites = require('./routers/FavoritesRouter');
 const addBook = require('./routers/addBookRouter');
 const deleteBookFav = require('./routers/deleteBookRouter');
 const raitingRouter = require('./routers/raitingRouter');
+const cors = require('./middlewares/cors');
 
 const { PORT } = process.env;
 const { sequelize } = require('../db/models');
@@ -36,15 +37,15 @@ app.use(session({
 }));
 
 app.use('/', allBooks);
-app.use('/book', book);
-app.use('/createbook', CreateBook);
-app.use('/favorites', Favorites);
-app.use('/add', addBook);
-app.use('/delete', deleteBookFav);
+app.use('/book', cors, book);
+app.use('/createbook', cors, CreateBook);
+app.use('/favorites', cors, Favorites);
+app.use('/add', cors, addBook);
+app.use('/delete', cors, deleteBookFav);
 app.use('/signup', registerRouter);
 app.use('/signin', loginRouter);
-app.use('/logout', logoutRouter);
-app.use('/raiting', raitingRouter);
+app.use('/logout', cors, logoutRouter);
+app.use('/raiting', cors, raitingRouter);
 
 app.listen(PORT, async () => {
   try {
